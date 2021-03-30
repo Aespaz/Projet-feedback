@@ -5,15 +5,26 @@
  * 
  */
 class User { 
-    public $email = ""; // Email de l'utilisateur qui servira de pseudo
-    public $mdp = "";// Mot de passe
-    public $name = "";// Prénom de la personne
-    public $admin;// Pour savoir si l'utilisateur est administrateur
-    public $liked;// Pour savoir si l'utilisateur a déjà envoyé un commentaire positif
-    public $unliked;// Pour savoir si l'utilisateur a déjà envoyé un commentaire négatif
+    public string $email; // Email de l'utilisateur qui servira de pseudo
+    public string $mdp;// Mot de passe
+    public string $name;// Prénom de la personne
+    public boolean $admin;// Pour savoir si l'utilisateur est administrateur
+    public boolean $liked;// Pour savoir si l'utilisateur a déjà envoyé un commentaire positif
+    public boolean $unliked;// Pour savoir si l'utilisateur a déjà envoyé un commentaire négatif
 
-    // Construction de l'utilisateur, procédure obligatoire pour qu'il existe
-    function __construct(string $email, string $mdp, string $name, bool $liked = false, bool $unliked = false) {
+    /**
+     * Construction de l'utilisateur, procédure obligatoire pour qu'il existe
+     * Si l'utilisateur est admin, il faudra le renseigner mais il ne l'est pas par défaut
+     * @param string $email Récupère l'adresse mail de l'utilisateur au format "adresse@email.com"
+     * @param string $mdp Récupère le mot de passe de l'utilisateur
+     * @param string $name Récupère l'adresse email de l'utilisateur
+     * @param bool $liked, $unliked Permet de savoir si l'utilisateur a au moins saisi un commentaire positif (liked)
+     * et un commentaire négati (unliked). Lors de la création d'un utilisateur, il est certain qu'il n'a pas envoyé de message
+     * donc liked et unliked sont faux par défaut
+     * @return void
+     *  */ 
+    function __construct(string $email, string $mdp, string $name, 
+    bool $liked = false, bool $unliked = false) {
         $this->email = $email;
         $this->mdp = $mdp;
         $this->name = $name;

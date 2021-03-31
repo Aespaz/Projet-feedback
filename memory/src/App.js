@@ -1,32 +1,17 @@
 import React from 'react';
 import './App.css';
+import ConnexionPage from './ConnexionPage';
+import FeedbackPage from './FeedBackPage';
+import { BrowserRouter as Router,Route } from 'react-router-dom';
+
 //dans le code dessous sert à afficher la boite en haut à gauche Projet-feedback
 function App() {
   return (
-    /**le code dessous affiche les deux boites pour ce que j'aime et ce que je n'aime pas
-     * il est relié au App.css dans le dossier src voila voila ^^
-     * quand vous lancer en npm start vérifier bien que vous été dans le dossier memory... oui j'ai 
-     * fais la bétise mdr ^^
-     */
-    <>
-  <h1 className="box">Projet-feedback</h1>
-    <div className="box" id="boxJaime">
-        <h1 class="titre">Ce que j'ai aimé</h1>
-    </div>
-  <div className="box" id="boxJaimePas">
-        <h1 class="titre">Ce que je n'ai pas aimé</h1>
-  </div>
-  <div className="box" id="boxMessageEnvoyer">
-    <select id="inputSelectionJaime">
-        <option value="valeur1">Ce que j'ai aimé</option>
-        <option value="valeur2" selected>Ce que je n'ai pas aimé</option>
-    </select>
-    <input type="text" placeholder="Entrée votre message ici" id='formulaireMessage'></input>
-    <button id="boutonEnvoyer">Envoyer</button>
-    
-    </div>
-</>
+   
+    <Router>
+        <Route path="/" exact component={FeedbackPage}/>
+        <Route path="/ConnexionPage" exact component={ConnexionPage}/>
+    </Router>
   )
 }
-
-export default App;
+export default App

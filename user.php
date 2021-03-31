@@ -1,6 +1,8 @@
 <?php
+
+require "config.php";
 /**
- * CLASSE User (Utilisateur)
+ * Classe User (Utilisateur)
  * Permet de créer des utilisateurs qui vont représenter la personne
  * @author Labigna
  */
@@ -30,6 +32,12 @@ class User {
         $this->name = $name;
         $this->liked = $liked;
         $this->unliked = $unliked;
+    }
+
+    function save()
+    {
+        $ins = $pdo->prepare("INSERT INTO User (email,name,password,liked,unliked,admin) VALUES (?,?,?,?)");
+        $ins->execute(array( $this->email,  $this->name,$this->password, $this->liked, $this->unliked, $this->admin )); 
     }
 }
 ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * CLASSE Comment (Commentaire)
+ * Classe Comment (Commentaire)
  * Commentaires positifs ou négatifs par semaine des utilisateurs
  * @author Labigna
  * 
@@ -21,6 +21,12 @@ class Comment {
         $this->message = $message;
         $this->type = $type;
         $this->week = date("W"); 
+    }
+
+    function save()
+    {
+        $ins = $pdo->prepare("INSERT INTO Comments (message, type, week) VALUES (?,?,?)");
+        $ins->execute(array( $this->message,  $this->type, $this->week)); 
     }
 
 }

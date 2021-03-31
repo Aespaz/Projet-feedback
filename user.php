@@ -8,9 +8,9 @@ class User {
     public string $email; // Email de l'utilisateur qui servira de pseudo
     public string $mdp;// Mot de passe
     public string $name;// Prénom de la personne
-    public boolean $admin;// Pour savoir si l'utilisateur est administrateur
-    public boolean $liked;// Pour savoir si l'utilisateur a déjà envoyé un commentaire positif
-    public boolean $unliked;// Pour savoir si l'utilisateur a déjà envoyé un commentaire négatif
+    public bool $admin;// Pour savoir si l'utilisateur est administrateur
+    public bool $liked;// Pour savoir si l'utilisateur a déjà envoyé un commentaire positif
+    public bool $unliked;// Pour savoir si l'utilisateur a déjà envoyé un commentaire négatif
 
     /**
      * Construction de l'utilisateur, procédure obligatoire pour qu'il existe

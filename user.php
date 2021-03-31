@@ -1,8 +1,8 @@
 <?php
 /**
- * CLASSE USER (UTILISATEUR)
+ * CLASSE User (Utilisateur)
  * Permet de créer des utilisateurs qui vont représenter la personne
- * 
+ * @author Labigna
  */
 class User { 
     public string $email; // Email de l'utilisateur qui servira de pseudo
@@ -19,7 +19,7 @@ class User {
      * @param string $mdp Récupère le mot de passe de l'utilisateur
      * @param string $name Récupère l'adresse email de l'utilisateur
      * @param bool $liked, $unliked Permet de savoir si l'utilisateur a au moins saisi un commentaire positif (liked)
-     * et un commentaire négati (unliked). Lors de la création d'un utilisateur, il est certain qu'il n'a pas envoyé de message
+     * et un commentaire négatif (unliked). Lors de la création d'un utilisateur, il est certain qu'il n'a pas envoyé de message
      * donc liked et unliked sont faux par défaut
      * @return void
      *  */ 

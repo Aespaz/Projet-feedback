@@ -6,7 +6,7 @@ require "comment.php";
 /*$user = new User("testl@email.com","mdp","testo");
 $user->save();*/
 
-function loading(string $email, string $mdp)
+function loadUser(string $email, string $mdp)
 {
     $pdo = connexionBDD();
     $sel = $pdo->query("SELECT * FROM User WHERE email = '$email' AND password = '$mdp'");
@@ -20,6 +20,21 @@ function loading(string $email, string $mdp)
     }
 }
 
-$utilisateur = loading("test@email.com","mdp");
+$utilisateur = loadUser("test@email.com","mdp");
+
+function getAllMessages()
+{
+
+}
+
+function getMessagesWeek(int $week)
+{
+
+}
+
+function getGoodUser()
+{
+
+}
 
 ?>

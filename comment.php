@@ -26,16 +26,29 @@ class Comment {
         $this->pdo = connexionBDD();
     }
 
+    /**
+     * Fonction pour obtenir le message du commnentaire
+     * @return string  Retourne le contenu du commentaire
+     */
     function getMessage()
     {
         return $this->message;
     }
 
+    /**
+     * Fonction pour obtenir la semaine du commentaire
+     * @return int Retourne le numéro de la semaine
+     */
     function getWeek()
     {
         return $this->week;
     }
 
+
+ /**
+     * Fonction de sauvegarde du commentaire dans la base de donnée
+     * @return void
+     */
     function save()
     {
         $ins = $this->pdo->prepare("INSERT INTO Comments (message, type, week) VALUES (?,?,?)");

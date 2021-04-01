@@ -1,10 +1,15 @@
 <?php
 //Connexion à la BDD
-$pdo = 0;
+
+function connexionBDD()
+{
 try{
-    $pdo = new PDO('mysql:host=localhost;dbname=Feedback', 'root', 'labi0907');
+    $pdo = new PDO('mysql:host=localhost;dbname=Feedback', 'root', '');
+    return $pdo;
 }
     catch(PDOException $e){
         echo $e->getMessage();
      } 
+}
+
 ?>

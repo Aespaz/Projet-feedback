@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Classe Comment (Commentaire)
  * Commentaires positifs ou négatifs par semaine des utilisateurs
@@ -9,6 +10,7 @@ class Comment {
     private string $message; // Commentaire de la personne
     private int $week;// Semaine à laquelle le commentaire a été passé, directement initialisé dans le constructeur à la date d'ahujourd'hui
     private bool $type;// Type du commentaire si c'est un "j'ai aimé" ou "j'ai pas aimé"
+    private $pdo;
 
     /**
      * Construction du commentaire avec attribution des paramètres, 
@@ -21,13 +23,24 @@ class Comment {
         $this->message = $message;
         $this->type = $type;
         $this->week = date("W"); 
+        $this->pdo = connexionBDD();
+    }
+
+    function getMessage()
+    {
+        return $this->message;
+    }
+
+    function getWeek()
+    {
+        return $this->week;
     }
 
     function save()
     {
-        $ins = $pdo->prepare("INSERT INTO Comments (message, type, week) VALUES (?,?,?)");
-        $ins->execute(array( $this->message,  $this->type, $this->week)); 
+        $ins = $this->pdo->prepare("INSERT INTO Comments (message, type, week) VALUES (?,?,?)");
+        $ins->execute(array( $this->message, (int)$this->type, $this->week)); 
     }
-
 }
 ?>
+

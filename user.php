@@ -1,6 +1,6 @@
 <?php
 
-require "config.php";
+
 /**
  * Classe User (Utilisateur)
  * Permet de créer des utilisateurs qui vont représenter la personne
@@ -13,6 +13,7 @@ class User {
     public bool $admin;// Pour savoir si l'utilisateur est administrateur
     public bool $liked;// Pour savoir si l'utilisateur a déjà envoyé un commentaire positif
     public bool $unliked;// Pour savoir si l'utilisateur a déjà envoyé un commentaire négatif
+    private $pdo;
 
     /**
      * Construction de l'utilisateur, procédure obligatoire pour qu'il existe
@@ -26,18 +27,20 @@ class User {
      * @return void
      *  */ 
     function __construct(string $email, string $mdp, string $name, 
-    bool $liked = false, bool $unliked = false) {
+    bool $liked = false, bool $unliked = false, bool $admin) {
         $this->email = $email;
         $this->mdp = $mdp;
         $this->name = $name;
         $this->liked = $liked;
         $this->unliked = $unliked;
+        $this->admin = $admin;
+        $this->pdo = connexionBDD();
     }
 
     function save()
-    {
-        $ins = $pdo->prepare("INSERT INTO User (email,name,password,liked,unliked,admin) VALUES (?,?,?,?)");
-        $ins->execute(array( $this->email,  $this->name,$this->password, $this->liked, $this->unliked, $this->admin )); 
+    {  
+        $ins = $this->pdo->prepare("INSERT INTO User (name, email, password, liked, unliked, admin) VALUES (?,?,?,?,?,?)");
+        $ins->execute(array( $this->name,  $this->email,$this->mdp, (int)$this->liked, (int)$this->unliked, (int)$this->admin)); 
     }
 }
 ?>

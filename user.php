@@ -3,16 +3,24 @@
 
 /**
  * Classe User (Utilisateur)
- * Permet de créer des utilisateurs qui vont représenter la personne
+ * Permet de créer des utilisateurs
+ * @property mixed $name Prénom de la personne
+ * @property mixed $email Email de l'utilisateur qui servira de pseudo
+ * @property mixed $mdp Mot de passe
+ * @property mixed $admin Pour savoir si l'utilisateur est administrateur
+ * @property mixed $liked Pour savoir si l'utilisateur a déjà envoyé un commentaire positif
+ * @property mixed $unliked Pour savoir si l'utilisateur a déjà envoyé un commentaire négatif
+ * @property mixed $pdo Variable de connexion à la bdd
+ * @property  $name
  * @author Labigna
  */
 class User { 
-    public string $email; // Email de l'utilisateur qui servira de pseudo
-    public string $mdp;// Mot de passe
-    public string $name;// Prénom de la personne
-    public bool $admin;// Pour savoir si l'utilisateur est administrateur
-    public bool $liked;// Pour savoir si l'utilisateur a déjà envoyé un commentaire positif
-    public bool $unliked;// Pour savoir si l'utilisateur a déjà envoyé un commentaire négatif
+    private string $email;
+    private string $mdp;
+    private string $name;
+    private bool $admin;
+    private bool $liked;
+    private bool $unliked;
     private $pdo;
 
     /**

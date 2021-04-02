@@ -3,13 +3,17 @@
 /**
  * Classe Comment (Commentaire)
  * Commentaires positifs ou négatifs par semaine des utilisateurs
+ * @property mixed $message Commentaire de la personne
+ * @property mixed $week Semaine à laquelle le commentaire a été passé, directement initialisé dans le constructeur à la date d'ahujourd'hui
+ * @property mixed $name Type du commentaire à savoir si c'est un "j'ai aimé" ou "j'ai pas aimé"
+ * @property mixed $pdo Variable de connexion à la bdd
  * @author Labigna
  * 
  */
 class Comment { 
-    private string $message; // Commentaire de la personne
-    private int $week;// Semaine à laquelle le commentaire a été passé, directement initialisé dans le constructeur à la date d'ahujourd'hui
-    private bool $type;// Type du commentaire si c'est un "j'ai aimé" ou "j'ai pas aimé"
+    private string $message;
+    private int $week;
+    private bool $type;
     private $pdo;
 
     /**

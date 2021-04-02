@@ -16,5 +16,7 @@ Objectifs trop ambitieux.
 Nous avons quand même bien progressé sur ce projet.
 
  ![alt text](https://cdn.discordapp.com/attachments/752910436927668256/827446394381271051/MLD.png) 
- ![Screenshot](/home/aymeric/Images/Capture d’écran du 2021-03-30 14-25-23.png)
- ![Screenshot](/home/aymeric/Images/Capture d’écran du 2021-04-02 09-58-53.png)
+
+ ![alt text](https://cdn.discordapp.com/attachments/823512269723926538/827457349488214036/Capture_decran_du_2021-04-02_09-58-53.png)
+
+ ![alt text](https://cdn.discordapp.com/attachments/823512269723926538/827457515335581736/Capture_decran_du_2021-03-30_14-25-23.png)
